@@ -1,0 +1,25 @@
+<input type="text"
+class="form-control"
+placeholder="Pesquisar por nome ou descrição"
+(input)="searchMachine($event)">
+<br>
+<a
+class="list-group-item active"
+>Máquinas</a>
+<div class="list-group pre-scrollable" pre-scrollable>
+
+  <a *ngFor="let machine of machines; let i = index"
+  (click)="setMachineArray(machine)"
+  style="cursor: pointer;"
+  class="list-group-item clearfix"
+  >
+  <div class="pull-left">
+    <h4 class="list-group-item-heading">{{ machine.macid }}</h4>
+    <p class="list-group-item-text">{{ machine.description }}</p>   
+  </div>
+  <span class="pull-right">
+  </span>
+  </a>
+</div>
+
+

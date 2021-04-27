@@ -1,0 +1,27 @@
+<input type="text"
+class="form-control"
+placeholder="Pesquisar por nome, matricula ou ID"
+(input)="searchUser($event)">
+<br>
+
+    <a
+    class="list-group-item active"
+    >Operadores</a>
+
+<div class="list-group pre-scrollable" pre-scrollable>
+
+  <a *ngFor="let user of users; let i = index"
+  (click)="getUser(i)"
+  style="cursor: pointer;"
+  class="list-group-item clearfix"
+  >
+  <div class="pull-left">
+    <h4 class="list-group-item-heading">{{ user.name }}</h4>
+    <p class="list-group-item-text">{{ user.rfid }}</p>
+  </div>
+  <span class="pull-right">
+  </span>
+  </a>
+</div>
+
+

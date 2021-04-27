@@ -1,0 +1,12 @@
+<div class="col-lg-12">
+  <a class="list-group-item active">Maquinas</a>
+<div class="list-group pre-scrollable" pre-scrollable>
+  
+  <app-machine-item
+   *ngFor="let machine of machines; let i = index"
+   [machine]="machine"
+   [routerLink]="['/machine-update', machine.id]"
+   ></app-machine-item>
+</div>
+</div>
+

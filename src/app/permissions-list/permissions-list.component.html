@@ -1,0 +1,34 @@
+  <div class="list-group pre-scrollable set-scroll-height-machine set-scroll-heigth">
+    <div *ngFor="let permission of permissionList">
+        <a 
+        style="cursor: pointer;"
+        class="list-group-item clearfix">
+        <div class="pull-left" *ngIf="permission">
+          <h4 class="list-group-item-heading">{{ permission.machineName }}</h4>
+        </div>
+        <button type="button"
+         class="btn btn-default pull-right"
+          aria-label="Left Align"
+          (click)="openModal(template)">
+          <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+        </button>
+        <span class="pull-right">
+        </span>
+        </a>
+        <ng-template #template>
+            <div class="modal-body text-center">
+              <div class="modal-header">
+                <p>Excluir permissão?</p>
+              </div>
+              <div class="modal-body">
+                <button type="button" class="btn btn-danger btn-space" (click)="confirm(permission.id)" >Remover</button>
+                <button type="button" class="btn btn-primary btn-space" (click)="decline()" >Cancelar</button>
+              </div>
+            </div>
+        </ng-template>
+      </div>
+</div>
+<!--(click)="removePermission(permission.id)">-->
+
+
+

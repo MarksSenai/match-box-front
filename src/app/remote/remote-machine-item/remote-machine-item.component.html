@@ -1,0 +1,15 @@
+<a
+style="cursor: pointer;"
+class="list-group-item clearfix">
+<div class="row">
+    <div class="col-sm-6" *ngIf="machine">
+        <h4 class="list-group-item-heading">{{ machine.macid }}</h4>
+        <p class="list-group-item-text">{{ machine.description }}</p>
+    </div>
+    <div class="col-sm-5" *ngIf="machine">
+        <h4 class="list-group-item-text">{{ machine.machineIP }}:{{ machine.machinePort }}</h4>
+    </div>
+  </div>
+<span class="pull-right">
+</span>
+</a>

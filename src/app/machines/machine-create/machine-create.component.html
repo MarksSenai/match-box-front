@@ -1,0 +1,68 @@
+<div class="row">
+   <div class="col-lg-6 pull-right">
+      <button class="btn btn-info pull-right" routerLink="/machines">Retornar para Máquinas</button>
+  </div>
+</div>
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <div id="machine-data" ngModelGroup="machineData" #machineData="ngModelGroup">
+      <div class="row">
+          <div class="col-sm-6 form-group">
+            <label for="macid">Maquina</label>
+            <input
+              type="text"
+              id="macid"
+              class="form-control"
+              ngModel
+              name="macid"
+              required
+              #macid="ngModel">
+              <span class="help-block input-validation-color "
+               *ngIf="!macid.valid && macid.touched">
+               Informe a tag do equipamento</span>
+              
+           </div>
+          <div class="col-sm-6 form-group">
+            <label for="description">Descrição</label>
+            <input
+              type="text"
+              id="description"
+              class="form-control"
+              ngModel
+              name="description"
+              required
+              #description="ngModel">
+              <span class="help-block input-validation-color">
+                Informe a descrição do equipamento</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 form-group">
+            <label for="macid">IP do dispositivo</label>
+            <input
+              type="text"
+              id="machineIP"
+              class="form-control"
+              ngModel
+              name="machineIP"
+              #macid="ngModel"
+              placeholder="ex: 10.80.78.222">
+          </div>
+          <div class="col-sm-6 form-group">
+            <label for="machinePort">Porta</label>
+            <input
+              type="text"
+              id="machinePort"
+              class="form-control"
+              ngModel
+              name="machinePort"
+              #description="ngModel"
+              placeholder="ex: 8080">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <button class="btn btn-success" type="submit" [disabled]="!f.valid">Salvar</button>
+          </div>
+        </div>
+  </div>
+</form>

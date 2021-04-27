@@ -1,0 +1,120 @@
+<div class="row">
+  <div class="col-sm-6 col-md-6 col-lg-6">
+      <button class="btn btn-info pull-right" routerLink="/users">Retornar Usuários</button>
+  </div>
+  <div class="col-sm-6 col-md-6 col-lg-6" >
+    <button class="btn btn-info pull-right" routerLink="/users-import">Importador</button>
+</div>
+    
+</div>
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <div id="user-data" ngModelGroup="userData" #userData="ngModelGroup">
+          <div class="row">
+              <div class="col-sm-6 form-group">
+                <label for="name">Nome</label>
+                <input
+                  type="text"
+                  id="name"
+                  class="form-control"
+                  ngModel
+                  name="name"
+                  required
+                  #name="ngModel">
+                  <span class="help-block input-validation-color " *ngIf="!name.valid && name.touched">Informe o nome do operador</span>
+                  
+               </div>
+              <div class="col-sm-6 form-group">
+                <label for="rfid">ID do cartão</label>
+                <input
+                  type="text"
+                  id="rfid"
+                  class="form-control"
+                  ngModel
+                  name="rfid"
+                  required
+                  #rfid="ngModel">
+                  <span class="help-block input-validation-color" *ngIf="!rfid.valid && rfid.touched">Informe o ID do operador</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-4 form-group">
+                  <label for="name">Cargo</label>
+                  <input
+                    type="text"
+                    id="name"
+                    class="form-control"
+                    ngModel
+                    name="func"
+                    required>
+              </div>
+              <div class="col-sm-4 form-group">
+                <label for="reg">Matricula</label>
+                <input
+                  type="text"
+                  id="reg"
+                  class="form-control"
+                  ngModel
+                  name="reg"
+                  required
+                  #reg="ngModel">
+                  <span class="help-block input-validation-color" *ngIf="!rfid.valid && rfid.touched">Informe o ID do operador</span>
+              </div>
+              <div class="col-sm-4 form-group">
+                  <div class="btn-group">
+                      <label for="type">Categoria</label>
+                      <select class="form-control" 
+                      id="type"
+                      class="form-control"
+                      [ngModel]=""
+                      name="type">
+                          <option value="4">Treinamento</option>
+                          <option value="2">Habilitado</option>
+                          <option value="3">Especialista</option>
+                          <option value="1">Inativo</option>
+                        </select>
+                    </div>
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 form-group">
+                    <div class="btn-group">
+                        <label for="perfis">Papel</label>
+                        <select class="form-control" 
+                        id="perfis"
+                        class="form-control"
+                        [ngModel]=""
+                        name="perfis">
+                            <option value="USER">Usuário</option>
+                            <option value="ADMIN">Administrador</option>
+                          </select>
+                      </div>
+                </div>
+                <div class="col-sm-4 form-group">
+                  <label for="email">Email</label>
+                  <input
+                    type="text"
+                    id="email"
+                    class="form-control"
+                    ngModel
+                    name="email">
+              </div>
+              <div class="col-sm-4 form-group">
+                <label for="password">Senha</label>
+                <input
+                  type="password"
+                  id="password"
+                  class="form-control"
+                  ngModel
+                  name="password">
+            </div>
+                <br>
+
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <button class="btn btn-success" type="submit" [disabled]="!f.valid">Salvar</button>
+              </div>
+            </div>
+      </div>
+    </form>
+

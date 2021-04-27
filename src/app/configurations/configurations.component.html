@@ -1,0 +1,6 @@
+<div *ngIf="config === null">
+    <app-config-create></app-config-create>
+</div>
+<div *ngIf="config !== null">
+    <app-config-update></app-config-update>
+</div>

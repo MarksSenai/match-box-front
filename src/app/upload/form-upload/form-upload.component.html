@@ -1,0 +1,19 @@
+<div class="row">
+	<div class="col-xs-5 col-md-5">
+	  <a class="thumbnail">
+	  <img [src]=" imageUser | safeURL"  alt="...">
+	  </a>
+	</div>
+</div>
+<div class="row">
+	<div class="col-lg-12">
+		<label class="btn btn-default">
+			<input type="file" (change)="selectFile($event)">
+		</label>
+		<div id="userCode" [(ngModel)]="userCode" hidden>{{ userCode }}</div>
+			<button class="btn btn-success" [disabled]="!selectedFile"
+			(click)="upload(userCode)">Carregar imagem</button>
+	</div>
+</div>
+
+

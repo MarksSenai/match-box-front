@@ -1,0 +1,128 @@
+ <div class="row">
+    <div class="col-lg-4">
+         <form-upload></form-upload>
+    </div>
+    <div class="col-lg-4">
+     <button class="btn btn-info pull-right" routerLink="/users">Retornar Usuários</button>
+    </div>
+    <div class="col-lg-4">
+     <button class="btn btn-success pull-right" type="button" (click)="onUpdateUser()">Salvar</button>
+   </div>
+ </div>
+ 
+ <form >
+    <div class="row">
+      <div class="col-lg-8">
+          <div id="user-data">
+              <div class="row">
+                  <div class="col-lg-6 form-group">
+                    <label for="name">Nome</label>
+                    <input
+                      type="text"
+                      id="name"
+                      class="form-control"
+                      [(ngModel)]="user.name"
+                      required
+                      name="name"
+                      ng-disabled="user.name == admin"
+                      >
+                  </div>
+                  <div class="col-lg-6 form-group" >
+                    <label for="rfid">ID do cartão</label>
+                    <input
+                      type="text"
+                      id="rfid"
+                      required
+                      class="form-control input-group"
+                      [(ngModel)]="user.rfid"
+                      name="rfid"
+                      />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-4 form-group">
+                      <label for="function">Cargo</label>
+                      <input
+                        type="text"
+                        id="func"
+                        required
+                        class="form-control"
+                        [(ngModel)]="user.func"
+                        name="func">
+                  </div>
+                  <div class="col-sm-4 form-group">
+                      <label for="reg">Matricula</label>
+                      <input
+                        type="text"
+                        id="reg"
+                        required
+                        class="form-control"
+                        [(ngModel)]="user.reg"
+                        name="reg"
+                        />
+                     </div>
+                     <div class="col-sm-4 form-group">
+                      <div class="btn-group">
+                          <label for="type">Categoria</label>
+                          <select class="form-control" 
+                          id="type"
+                          class="form-control"
+                          [(ngModel)]="user.type"
+                          name="type">
+                              <option value="4">Treinamento</option>
+                              <option value="2">Habilitado</option>
+                              <option value="3">Especialista</option>
+                              <option value="1">Inativo</option>
+                            </select>
+                        </div>
+                  </div>
+                </div>
+              <div class="row">
+                    <div class="col-sm-4 form-group">
+                        <div class="btn-group">
+                            <label for="perfis">Papel</label>
+                            <select class="form-control" 
+                            id="perfis"
+                            class="form-control"
+                            [(ngModel)]="user.perfis"
+                            name="perfis">
+                                <option value="USER">Usuário</option>
+                                <option value="ADMIN">Administrador</option>
+                              </select>
+                          </div>
+                    </div>      
+                    <div class="col-sm-4 form-group">
+                      <label for="email">Email</label>
+                      <input
+                        type="text"
+                        id="email"
+                        required
+                        class="form-control"
+                        [(ngModel)]="user.email"
+                        name="email">
+                    </div>
+                    <div class="col-sm-4 form-group">
+                    <label for="password">Senha</label>
+                    <input
+                      type="password"
+                      id="password"
+                      class="form-control"
+                      [(ngModel)]="user.password"
+                      name="password">
+                    </div>
+              </div>
+      </div>
+      </div>
+      <div class="col-lg-4">
+          <div class="form-group">
+             <label for="permission">Permissões</label>
+           <a class="list-group-item active">Permissão por maquina</a>
+           <app-permissions-list></app-permissions-list>
+         </div>
+     </div>
+      </div>
+     </form>
+
+
+
+

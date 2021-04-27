@@ -1,0 +1,121 @@
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <div id="config-data" ngModelGroup="configData" #configData="ngModelGroup">
+      <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12 form-group">
+              <h3 class="col-sm-12 col-md-12 col-lg-12">Empresa</h3>
+              <div class="col-sm-4 col-md-4 col-lg-4 form-group">
+                  <label for="companyname">Nome da empresa
+                      <span class="glyphicon glyphicon-question-sign"
+                        data-toggle="tooltip"
+                        data-placement="right"
+                        title="Nome da empresa que será exibido no canto superior esquerdo">
+                      </span>
+                  </label>
+                  <input
+                    type="text"
+                    id="companyname"
+                    class="form-control"
+                    ngModel
+                    name="companyname"
+                    required
+                    #companyname="ngModel">
+                    <span class="help-block input-validation-color "></span>
+              </div>
+              <div class="col-sm-8 col-md-8 col-lg-8 form-group">
+                  <label for="volume">Volume 
+                    <span class="glyphicon glyphicon-question-sign"
+                      data-toggle="tooltip"
+                      data-placement="right"
+                      title="Caminho da pasta onde serão armazenados os arquivos da aplicação">
+                    </span>
+                  </label>
+                  <input
+                    type="text"
+                    id="volume"
+                    class="form-control"
+                    ngModel
+                    name="volume"
+                    required
+                    #volume="ngModel">
+                    <span class="help-block input-validation-color "></span>
+              </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="col-sm-6 form-group">
+              <label for="companypicture">Logo da empresa 
+                <span class="glyphicon glyphicon-question-sign"
+                  data-toggle="tooltip"
+                  data-placement="right"
+                  title="Logo da empresa que será apresentado na tela dos dispositivos em campo">
+                </span>
+              </label>
+              <app-company-image></app-company-image>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 form-group">
+                <h3 class="col-sm-12 col-md-12 col-lg-12">Disposítivos de campo</h3>
+                <div class="col-sm-4 col-md-4 col-lg-4 form-group">
+                    <label for="rotationtime">Rodizio(em minutos)
+                        <span class="glyphicon glyphicon-question-sign"
+                          data-toggle="tooltip"
+                          data-placement="right"
+                          title="Tempo máximo que um operador permanecerá trabalhando no equipamento">
+                        </span>
+                      </label>
+                    <input
+                      type="text"
+                      id="rotationtime"
+                      class="form-control"
+                      ngModel
+                      name="rotationtime"
+                      required
+                      #rotationtime="ngModel">
+                      <span class="help-block input-validation-color "></span>
+                </div>
+                <div class="col-sm-4 col-md-4 col-lg-4 form-group">
+                    <label for="expirationtime">Tempo de espera(em minutos)
+                        <span class="glyphicon glyphicon-question-sign"
+                          data-toggle="tooltip"
+                          data-placement="right"
+                          title="Tempo que um operador deve esperar até que o equipamento permitirá novo acesso">
+                        </span>
+                      </label>
+                    <input
+                      type="number"
+                      id="expirationtime"
+                      class="form-control"
+                      ngModel
+                      name="expirationtime"
+                      required
+                      #expirationtime="ngModel">
+                      <span class="help-block input-validation-color"></span>
+                </div>
+                <div class="col-sm-4 col-md-4 col-lg-4 form-group">
+                  <label for="expirationtime">Configuração remota
+                    <span class="glyphicon glyphicon-question-sign"
+                      data-toggle="tooltip"
+                      data-placement="right"
+                      title="Envia para os dispositívos em campo as configurações cadastradas no sistema">
+                    </span>
+                  </label>
+                  <br>
+                  <button
+                    class="btn btn-success"
+                    type="submit"
+                    routerLink="/remote-update">Configurar
+                  </button>
+                </div> 
+            </div>
+          </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <button class="btn btn-success" type="submit">Salvar</button>
+          </div>
+        </div>
+  </div>
+ </form> 

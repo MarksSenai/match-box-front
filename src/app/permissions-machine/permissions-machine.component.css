@@ -1,0 +1,4 @@
+.set-scroll-height-machine {
+    max-height: 190px;
+    overflow-y: scroll;
+}

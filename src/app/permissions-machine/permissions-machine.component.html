@@ -1,0 +1,19 @@
+<div class="list-group pre-scrollable set-scroll-height-machine">
+    <div *ngFor="let machine of machines; let i = index">
+        <a 
+          style="cursor: pointer;"
+          class="list-group-item clearfix">
+          <div class="pull-left" *ngIf="machine">
+            <h4 class="list-group-item-heading">{{ machine.macid }}</h4>
+            <p class="list-group-item-text">{{ machine.description }}</p>
+          </div>
+          <button type="button"
+            class="btn btn-default pull-right"
+            aria-label="Left Align"
+            (click)="removePermission(machine.id)">
+            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+          </button>
+          <span class="pull-right"></span>
+        </a>
+      </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="pre-scrollable">
+  <div class="" *ngFor="let report of reportList">
+    <a
+    style="cursor: pointer;"
+    class="list-group-item clearfix">
+    <div class="pull-left">
+      <h4 class="list-group-item-heading">Equipamento: {{ report.machine }}</h4>
+      <p class="list-group-item-text">Operador: {{ report.user  }}</p>
+    </div>
+    <div class="pull-right">
+      <p class="list-group-item-text"><strong>Inicio:</strong> {{report.loginDate}} {{report.login}}</p>
+      <p class="list-group-item-text"><strong>Fim:</strong> {{report.logoutDate}} {{report.logout}}   </p>
+    </div>
+    <span class="pull-right">
+    </span>
+    </a>
+</div>
+</div>
+
+

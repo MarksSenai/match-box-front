@@ -1,0 +1,14 @@
+.set-scroll-height-report {
+    max-height: 600px;
+    overflow-y: scroll;
+}
+
+@media  (min-width: 768px) {
+    div.col-lg-7.five-three {
+    width: 60% !important;
+    }
+
+    div.col-lg-5.five-two {
+    width: 40% !important;
+    }
+}

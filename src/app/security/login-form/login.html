@@ -1,0 +1,25 @@
+<div class="login-page">
+  <div class="form">
+    <form class="login-form" (ngSubmit)="onAuth(f)" #f="ngForm">
+      <div id="login-data" ngModelGroup="loginData" #loginData="ngModelGroup">
+          <input
+          type="text"
+          id="email"
+          placeholder="Email"
+          ngModel
+          name="email"/>
+         <input
+          type="password"
+          id="password"
+          placeholder="Senha"
+          ngModel
+          name="password"/>
+          <div class="login-error" *ngIf="!auth">
+            <p>Usuário ou senha inválidos</p>
+          </div>
+         <button class="btn btn-success" type="submit" >login</button>
+         <p class="message"><a >Recuperar senha</a></p>
+      </div>
+    </form>
+  </div>
+</div>

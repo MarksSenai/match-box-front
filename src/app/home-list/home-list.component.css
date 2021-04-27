@@ -1,0 +1,4 @@
+.set-scroll-height-status {
+    max-height: 600px;
+    overflow-y: scroll;
+}
